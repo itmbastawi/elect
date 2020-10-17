@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+<div class="jumbotron jumbotron-fluid background" style="background-color: #333; color:white; padding:30px;word-wrap:break-word;">
+  <div class="container center">
+    <h1 class="display-5">ادارة البرنامج</h1>
+    <h6> اضافة وتعديل وحذف البيانات</h6>
+  </div>
+</div>
+{{end}}
+
+<div class="row ">
+    <div class="col-md-4 col-sm-10" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">بيانات المناطق والاقسام</h5>
+              <p class="card-text">اضافة وتعديل </p>
+              <a href="{{=URL('grid',args='department')}}" class="btn btn-primary">فتح جدول البيانات</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4 col-sm-10" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4 col-sm-10" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4 col-sm-10" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+</div>

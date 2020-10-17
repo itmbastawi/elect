@@ -2,7 +2,9 @@
 
 db.define_table('department',
                 Field('name'),
-                Field('level_up','reference department'),
+                Field('level_up','reference department',
+                requires=IS_IN_DB(db,'department.id','%(name)s'),
+                format='%(name)s'),
                 Field('notes'),
                 auth.signature,format='%(name)s')
 
