@@ -6,8 +6,8 @@
 
 # ---- example index page ----
 def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
+    response.flash = T("Hello")
+    return dict(message=T('Welcome '))
 
 def elect_result():
     #dd number or precentage to box and elect
@@ -24,6 +24,8 @@ def manage():
     return dict()
 
 def dashboard():
+    rows = db(db.elect_number).select()
+
     return dict()
 
 # ---- API (example) -----

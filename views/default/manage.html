@@ -9,40 +9,49 @@
 </div>
 {{end}}
 
-<div class="row ">
-    <div class="col-md-4 col-sm-10" >
+<div class="row justify-content-center">
+    <div class="col-md-4 col-sm-10 mt-2" >
         <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">بيانات المناطق والاقسام</h5>
               <p class="card-text">اضافة وتعديل </p>
-              <a href="{{=URL('grid',args='department')}}" class="btn btn-primary">فتح جدول البيانات</a>
+              <a href="{{=URL('grid',args='department')}}" class="btn btn-primary">فتح  </a>
             </div>
           </div>
     </div>
-    <div class="col-md-4 col-sm-10" >
+    <div class="col-md-4 col-sm-10 mt-2" >
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">بيانات الصندوق</h5>
+              <p class="card-text">اضافة وتعديل بيانات الصناديق</p>
+              <a href="{{=URL('grid',args='box')}}" class="btn btn-primary">فتح   </a>
             </div>
           </div>
     </div>
-    <div class="col-md-4 col-sm-10" >
+    <div class="col-md-4 col-sm-10 mt-2" >
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">اسم المرشحين</h5>
+              <p class="card-text">إضافة وتعديل</p>
+              <a href="{{=URL('grid',args='person')}}" class="btn btn-primary">فتح  </a>
             </div>
           </div>
     </div>
-    <div class="col-md-4 col-sm-10" >
+    <div class="col-md-4 col-sm-10 mt-2" >
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title"> بيانات المرشحين</h5>
+              <p class="card-text">إضافة رقم وتاريخ الترشيح</p>
+              <a href="{{=URL('grid',args='elect_info')}}" class="btn btn-primary">فتح</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4 col-sm-10 mt-2" >
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"> تعديل النتائج</h5>
+              <p class="card-text">تعديل النتائج عند وجود خطأ ادخال</p>
+              <a href="{{=URL('grid',args='elect_number')}}" class="btn btn-primary">فتح</a>
             </div>
           </div>
     </div>

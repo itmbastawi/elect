@@ -2,15 +2,14 @@
 
 db.define_table('department',
                 Field('name'),
-                Field('level_up','reference department',
-                requires=IS_IN_DB(db,'department.id','%(name)s'),
-                format='%(name)s'),
+                Field('level_up','reference department' ),
                 Field('notes'),
                 auth.signature,format='%(name)s')
 
 
 db.define_table('box',
                 Field('dep_id','reference department'),
+                Field('box_no'),
                 Field('total','integer'),
                 Field('box_date','date'),
                 Field('notes'),
@@ -21,7 +20,7 @@ db.define_table('person',
                 Field('notes'),
                 auth.signature,format='%(name)s')
 
-db.define_table('elect_inf',
+db.define_table('elect_info',
                 Field('person_id','reference person'),
                 Field('elect_code'),
                 Field('elect_date','date'),
@@ -40,14 +39,19 @@ db.define_table('elect_number',
                     ),
                 Field('elector','integer' ,label='الرقم او النسبة'),
                 Field('precentage','boolean',label='الرقم هو نسبة'),
-                Field('box',requires = IS_INT_IN_RANGE(0, 10,error_message='too small or too large!'),
-                label='رقم الصندوق'),
+                Field('box',
+                        label='رقم الصندوق'),
                 Field('notes',label='ملاحظات'),
                 auth.signature)
 
+
+
+db.department.level_up.widget = SQLFORM.widgets.autocomplete(
+request, db.department.name, limitby=(0,10), min_length=2,id_field=db.department.id)
 
 db.elect_number.dep_id.widget = SQLFORM.widgets.autocomplete(
 request, db.department.name, limitby=(0,10), min_length=2,id_field=db.department.id)
 
 db.elect_number.person_id.widget = SQLFORM.widgets.autocomplete(
 request, db.person.name, limitby=(0,10), min_length=2,id_field=db.person.id)
+
