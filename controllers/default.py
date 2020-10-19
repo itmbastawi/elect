@@ -24,9 +24,9 @@ def manage():
     return dict()
 
 def dashboard():
-    rows = db(db.elect_number).select()
+    boxs = db(db.box.box_date.year()==request.now.year).select()
 
-    return dict()
+    return dict(boxs=boxs)
 
 # ---- API (example) -----
 @auth.requires_login()

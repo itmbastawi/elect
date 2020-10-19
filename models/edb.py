@@ -3,6 +3,7 @@
 db.define_table('department',
                 Field('name'),
                 Field('level_up','reference department' ),
+                Field('wrong','integer',label='الاصوات الباطلة'),
                 Field('notes'),
                 auth.signature,format='%(name)s')
 
