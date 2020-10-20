@@ -9,6 +9,7 @@ def index():
     response.flash = T("Hello")
     return dict(message=T('Welcome '))
 
+@auth.requires_login()
 def elect_result():
     #dd number or precentage to box and elect
     form = SQLFORM(db.elect_number)
@@ -20,9 +21,11 @@ def elect_result():
         response.flash = 'please fill out the form'
     return dict(form=form)
 
+@auth.requires_login()
 def manage():
     return dict()
 
+@auth.requires_login('admin')
 def dashboard():
     boxs = db(db.box.box_date.year()==request.now.year).select()
 
@@ -35,7 +38,7 @@ def api_get_user_email():
     return response.json({'status':'success', 'email':auth.user.email})
 
 # ---- Smart Grid (example) -----
-# @auth.requires_membership('admin') # can only be accessed by members of admin groupd
+@auth.requires_membership('admin') # can only be accessed by members of admin groupd
 def grid():
     response.view = 'generic.html' # use a generic view
     tablename = request.args(0)
